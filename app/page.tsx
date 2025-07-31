@@ -15,8 +15,10 @@ import { CardDescription } from "@/components/ui/card";
 
 
 export default function Page() {
-  const [SectionData, setSectionData] = useState<any>(null);
-  const [ChartData, setChartData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [SectionData, setSectionData] = useState<any>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [ChartData, setChartData] = useState<any>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export default function Page() {
         <Loading />
       </div>
     );
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleExportCSV = (data: any[]) => {
   const csvContent = [
     ["Title", "Value", "Growth", "Trend Message", "Subtext"],
@@ -70,7 +72,7 @@ export default function Page() {
 };
 
 
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleExportPDF = (data: any[]) => {
   const doc = new jsPDF();
   doc.setFontSize(14);
@@ -90,7 +92,7 @@ const handleExportPDF = (data: any[]) => {
 
   const { current, previous } = SectionData;
   console.log(SectionData);
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const cards = Object.entries(current).map(([key, val]: any) => {
     const price = val; // keep as number
     const prev = previous[key as keyof typeof previous]; // ensure correct type

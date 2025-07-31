@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
-import { Slider } from "@/components/ui/slider";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
@@ -44,6 +43,7 @@ interface CryptoDataPoint {
 }
 
 const currencies = Object.entries(chartConfig).map(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ([key, { label }]: any) => key
 );
 
@@ -212,6 +212,7 @@ export function ChartAreaInteractive({ chartData }: ChartAreaInteractiveProps) {
             onValueChange={setActiveCurr}
             className="flex flex-wrap mt-4"
           >
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
             {currencies.map((i: any, ind) => (
               <ToggleGroupItem
                 key={ind}

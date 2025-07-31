@@ -8,7 +8,7 @@ export async function fetchCryptoHistory(days = 90) {
     fetch(`https://api.binance.com/api/v3/klines?symbol=SOLUSDT&interval=${interval}&limit=${limit}`).then(res => res.json()),
     fetch(`https://api.binance.com/api/v3/klines?symbol=ADAUSDT&interval=${interval}&limit=${limit}`).then(res => res.json()),
   ]);
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const history = btc.map((entry: any, i: number) => ({
     timestamp: new Date(entry[0]).toISOString(),  // Open time
     bitcoin: parseFloat(entry[4]),                // Close price

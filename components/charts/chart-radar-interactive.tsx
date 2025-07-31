@@ -34,7 +34,7 @@ const colors = {
   solana: "var(--chart-3)",
   cardano: "var(--chart-4)",
 }
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ChartRadarInteractive({ chartData }: any) {
 
   const simulateHistory = (current: number): { month: string; value: number }[] => {
